@@ -2,11 +2,11 @@
 
 **Nama**: Nashwa Putri Laisya  
 **NIM**: 122140180  
-**Kelas**: RA [Pemrograman Web]
+**Kelas**: RA [Pemrograman Web]  
 
 ### Informasi Login
-**username**: nashwa
-**password**: 754
+**username**: nashwa  
+**password**: 754  
 
 ---
 
