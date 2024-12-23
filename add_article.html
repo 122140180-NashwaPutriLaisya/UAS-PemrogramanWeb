@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Artikel</title>
+    <style>
+        /* Styling untuk body dan keseluruhan halaman */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Agar konten dan footer selalu mengisi seluruh layar */
+        }
+
+        /* Styling untuk header */
+        header {
+            background-color: #880808; /* Warna utama untuk header */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling untuk bagian main */
+        main {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            flex-grow: 1; /* Agar main section mengambil sisa ruang */
+        }
+
+        /* Form Tambah Artikel */
+        .add-article-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        /* Styling untuk label dan input form */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        /* Styling untuk input dan textarea */
+        input, textarea, select {
+            width: 100%; /* Pastikan elemen mengambil lebar penuh */
+            padding: 10px;
+            margin-bottom: 15px; /* Jarak antar elemen */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            box-sizing: border-box; /* Agar padding dan border tidak menambah lebar elemen */
+        }
+
+        /* Styling untuk checkbox dan radio button */
+        input[type="checkbox"], input[type="radio"] {
+            width: auto; /* Ukuran sesuai dengan tipe input */
+            margin-right: 10px;
+        }
+
+        /* Tombol simpan artikel */
+        button {
+            background-color: #880808; /* Warna utama untuk tombol */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%; /* Tombol mengambil lebar penuh form */
+        }
+
+        button:hover {
+            background-color: #661212; /* Warna gelap saat hover */
+        }
+
+        /* Styling untuk footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #880808; /* Warna footer */
+            color: white;
+            margin-top: auto; /* Memastikan footer berada di bawah */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Blog Pribadi - Tambah Artikel</h1>
+        <nav>
+            <!-- Navigasi ke halaman Beranda dan Dashboard Admin -->
+            <a href="index.php">Beranda</a>
+            <a href="admin_dashboard.php">Dashboard</a>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Form untuk menambah artikel -->
+        <section class="add-article-form">
+            <h2>Form Tambah Artikel</h2>
+            <form action="add_article.php" method="POST">
+                <!-- Input untuk judul artikel -->
+                <label for="title">Judul Artikel:</label>
+                <input type="text" id="title" name="title" required>
+                
+                <!-- Textarea untuk konten artikel -->
+                <label for="content">Konten Artikel:</label>
+                <textarea id="content" name="content" rows="6" required></textarea>
+                
+                <!-- Checkbox untuk menandai artikel sebagai favorit -->
+                <label for="favorite">
+                    <input type="checkbox" id="favorite" name="favorite">
+                    Favorit
+                </label>
+                
+                <!-- Radio button untuk memilih kategori artikel -->
+                <label for="category">Kategori Artikel:</label>
+                <input type="radio" id="technology" name="category" value="Technology" required>
+                <label for="technology">Technology</label>
+                <input type="radio" id="lifestyle" name="category" value="Lifestyle">
+                <label for="lifestyle">Lifestyle</label>
+                <input type="radio" id="health" name="category" value="Health">
+                <label for="health">Health</label>
+                
+                <!-- Dropdown untuk memilih status artikel -->
+                <label for="status">Status Artikel:</label>
+                <select id="status" name="status" required>
+                    <option value="draft">Draft</option>
+                    <option value="published">Published</option>
+                </select>
+
+                <!-- Tombol untuk mengirimkan artikel -->
+                <button type="submit">Simpan Artikel</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Blog Pribadi</p>
+    </footer>
+</body>
+</html>
